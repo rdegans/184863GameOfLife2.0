@@ -1,8 +1,8 @@
-/*
+﻿/*
 * Name: Riley de Gans
 * Date: May 27th, 2019
 * Description: A game that simulates life with a grid
-*/﻿
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,10 +88,19 @@ namespace _184863GameOfLife2._0
                     {
                         if (grid[x][y] == button)
                         {
-                            gridLive[x][y] = true;
-                            grid[x][y].Background = Brushes.Black;
-                            grid[x][y].BorderBrush = Brushes.White;
-                            counter++;
+                            if (gridLive[x][y] == false)
+                            {
+                                gridLive[x][y] = true;
+                                grid[x][y].Background = Brushes.Black;
+                                grid[x][y].BorderBrush = Brushes.White;
+                            }
+                            else if (gridLive[x][y])
+                            {
+                                gridLive[x][y] = false;
+                                grid[x][y].Background = Brushes.White;
+                                grid[x][y].BorderBrush = Brushes.Black;
+                            }
+
                         }
                     }
                 }
